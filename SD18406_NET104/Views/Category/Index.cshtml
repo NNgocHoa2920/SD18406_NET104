@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SD18406_NET104.Models.Category>
+
+<h1>Category List</h1>
+<div >
+    <a asp-controller="Category" asp-action="Create" class="btn btn-primary">CREATE CATEGORY</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+@* nó là 1 html helper method tong razor view. giúp lấy tên hiển thị của thuộc tính trong model *@
+
+                @Html.DisplayNameFor(model => model.CategoryID)
+            
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayOrder)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @* hiển thị giá trị của thuộc tính *@
+                    @Html.DisplayFor(modelItem=> item.CategoryID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=> item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisplayOrder)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
