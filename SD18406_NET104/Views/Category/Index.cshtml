@@ -36,6 +36,22 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.DisplayOrder)
                 </td>
+                <td>
+                    <div class="w-60 btn-group" role="group">
+                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.CategoryID" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.CategoryID" class="btn btn-danger mx-2">
+                            <i class="bi bi-trash-fill"></i>Delete
+                        </a>
+                        @*  <form asp-controller="Category" asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@item.Id" />
+                    <button type="submit">Delete</button>
+                    </form> *@
+
+
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
